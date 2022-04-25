@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+    <!--подключение стилей-->
+    <link rel="stylesheet" href="./pages/index.css">
+  </head>
+  <body>
+    <div class="page">
+      <!--шапка сайта-->
+      <header class="header">
+        <img class="header__logo" alt="Логотип" src="images/logo.svg">
+      </header>
+      <main class="content">
+        <!--профиль-->
+        <section class="profile">
+            <img class="profile__avatar" alt="Аватарка" src="images/Аватар.svg">
+            <div class="profile__info">
+              <div class="profile__name-button">
+                <h1 class="profile__name">Жак-Ив Кусто</h1>
+                <button class="profile__button" type="button" aria-label="Кнопка редактирования профиля">
+                  <img class="profile__button-icon" alt="Иконка редактирования профиля" src="images/button-edit.svg">
+                </button>
+              </div>
+              <p class="profile__description">Исследователь океана</p>
+            </div>
+            <button class="profile__button-pic" type="button" aria-label="Кнопка добавления фотографии">
+              <img class="profile__button-pictures" alt="Кнопка добавления фотографии" src="images/add-button.svg">
+            </button>
+        </section>
+        <!--картинки-->
+        <section class="elements">
+          <div class="element">
+            <img class="element__pictures" alt="Озеро Байкал" src="images/Байкал-Иркутск.jpg">
+            <div class="element__description">
+              <h2 class="element__title">Озеро Байкал</h2>
+              <button class="element__like" type="button" aria-label="Поставить лайк">
+                <img class="element__likes" alt="Лайк" src="images/like.svg">
+              </button>
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__pictures" alt="Волгоград" src="images/Волгоград.jpg">
+            <div class="element__description">
+              <h2 class="element__title">Волгоград</h2>
+              <button class="element__like" type="button" aria-label="Поставить лайк">
+                <img class="element__likes" alt="Лайк" src="images/like.svg">
+              </button>
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__pictures" alt="Казань" src="images/Казань.jpg">
+            <div class="element__description">
+              <h2 class="element__title">Казань</h2>
+              <button class="element__like" type="button" aria-label="Поставить лайк">
+                <img class="element__likes" alt="Лайк" src="images/like.svg">
+              </button>
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__pictures" alt="Камчатка" src="images/Камчатка.jpg">
+            <div class="element__description">
+              <h2 class="element__title">Камчатка</h2>
+              <button class="element__like" type="button" aria-label="Поставить лайк">
+                <img class="element__likes" alt="Лайк" src="images/like.svg">
+              </button>
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__pictures" alt="Тюмень" src="images/Тюмень.jpg">
+            <div class="element__description">
+              <h2 class="element__title">Тюмень</h2>
+              <button class="element__like" type="button" aria-label="Поставить лайк">
+                <img class="element__likes" alt="Лайк" src="images/like.svg">
+              </button>
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__pictures" alt="Краснодарский край" src="images/Краснодарский край.jpg">
+            <div class="element__description">
+              <h2 class="element__title">Краснодарский край</h2>
+              <button class="element__like" type="button" aria-label="Поставить лайк">
+                <img class="element__likes" alt="Лайк" src="images/like.svg">
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!--подвал-->
+      <footer class="footer">
+        <p class="footer__title">© 2022 Nikita Zhdanov</p>
+      </footer>
+      <!--попап-редактирование профиля-->
+      <div class="popup">
+        <div class="popup__container">
+          <button class="popup__close" type="button"></button>
+          <h3 class="popup__title">Редактировать профиль</h3>
+          <form class="popup__form" name="formPopup">
+          <input type="text" value="Жак-Ив Кусто" class="popup__name" name="namePopup" placeholder="Введите имя">
+          <input type="text" value="Исследователь океана" class="popup__info" name="infoPopup" placeholder="О себе">
+          <button class="popup__save" type="submit">Сохранить</button>
+        </form>
+        </div>
+      </div>
+    </div>
+    <!--подключение javascript-->
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
