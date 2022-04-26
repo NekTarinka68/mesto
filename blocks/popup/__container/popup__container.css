@@ -10,12 +10,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 430px;
-  height: 330px;
 }
 
 @media screen and (max-width: 879px) {
   .popup__container {
     max-width: 282px;
-    max-height: 322px;
   }
 }

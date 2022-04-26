@@ -9,11 +9,9 @@ const descriptionProfile = document.querySelector('.profile__description');
 
 function toggleModalWindow() {
   modalWindow.classList.toggle('popup_is-active');
+  nameInput.value = nameProfile.textContent;
+  infoInput.value = descriptionProfile.textContent;
 }
-
-profileEdit.addEventListener('click', toggleModalWindow);
-
-modalCloseBtn.addEventListener('click', toggleModalWindow);
 
 function onSubmit(event) {
   event.preventDefault();
@@ -21,5 +19,9 @@ function onSubmit(event) {
   descriptionProfile.textContent = infoInput.value;
   toggleModalWindow();
 }
+
+profileEdit.addEventListener('click', toggleModalWindow);
+
+modalCloseBtn.addEventListener('click', toggleModalWindow);
 
 formPopup.addEventListener('submit', onSubmit);

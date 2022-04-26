@@ -1,9 +1,12 @@
 .profile__name {
-  max-width: 294px;
+  min-width: 305px;
   font-weight: 500;
   font-size: 42px;
   line-height: 48px;
   margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 879px) {
@@ -11,5 +14,6 @@
   font-size: 27px;
   line-height: 33px;
   text-align: center;
+  min-width: 150px;
   }
 }

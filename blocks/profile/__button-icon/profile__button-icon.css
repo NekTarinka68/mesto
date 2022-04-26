@@ -9,8 +9,8 @@
 
 @media screen and (max-width: 879px) {
   .profile__button-icon {
-    width: 8px;
-    height: 8px;
+    width: 7.5px;
+    height: 7.5px;
     margin: 0;
   }
 }

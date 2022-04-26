@@ -1,4 +1,4 @@
-.popup__name {
+.popup__input {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -10,12 +10,11 @@
   width: 358px;
   height: 14px;
   margin: 0 36px 30px 36px;
-
   padding: 0 0 13px 0;
 }
 
 @media screen and (max-width: 879px) {
-  .popup__name {
+  .popup__input {
   width: 238px;
   height: 14px;
   margin: 0 22px 30px 22px;
