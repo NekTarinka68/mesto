@@ -7,21 +7,25 @@ const infoInput = document.querySelector('[name = "infoPopup"]');
 const nameProfile = document.querySelector('.profile__name');
 const descriptionProfile = document.querySelector('.profile__description');
 
-function toggleModalWindow() {
-  modalWindow.classList.toggle('popup_is-active');
+function popupOpenToggle() {
+  modalWindow.classList.add('popup_is-active');
   nameInput.value = nameProfile.textContent;
   infoInput.value = descriptionProfile.textContent;
+}
+
+function popupCloseToggle() {
+  modalWindow.classList.remove('popup_is-active');
 }
 
 function onSubmit(event) {
   event.preventDefault();
   nameProfile.textContent = nameInput.value;
   descriptionProfile.textContent = infoInput.value;
-  toggleModalWindow();
+  popupCloseToggle();
 }
 
-profileEdit.addEventListener('click', toggleModalWindow);
+profileEdit.addEventListener('click', popupOpenToggle);
 
-modalCloseBtn.addEventListener('click', toggleModalWindow);
+modalCloseBtn.addEventListener('click', popupCloseToggle);
 
 formPopup.addEventListener('submit', onSubmit);

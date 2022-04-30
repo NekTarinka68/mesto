@@ -8,6 +8,6 @@
 @media screen and (max-width: 879px) {
   .profile__name-button {
     max-width: 282px;
-    margin: 0 auto 14px;
+    margin: 0 0 14px;
   }
 }
