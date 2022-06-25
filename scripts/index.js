@@ -29,7 +29,7 @@ const likeButton = document.querySelector('.element__like');
 
 const modalWindowElement = document.querySelector('.popup_type_add-card')
 const modalCloseElement = modalWindowElement.querySelector('.popup__close');
-const formPopupCard = document.querySelector('.popup_type_form-card');
+const formPopupCard = document.querySelector('.popup_form_type-card');
 const namedCard = document.querySelector('[name = "namedPopup"]');
 const linkCard = document.querySelector('[name = "linkPopup"]');
 
