@@ -6,6 +6,9 @@
     <title>Mesto</title>
     <!--подключение стилей-->
     <link rel="stylesheet" href="./pages/index.css">
+    <!--подключение javascript-->
+    <script defer src="./scripts/cards.js"></script>
+    <script defer src="./scripts/index.js"></script>
   </head>
   <body>
     <div class="page">
@@ -42,11 +45,11 @@
       <!--попап-редактирование профиля-->
       <div class="popup popup_type_edit-profile">
         <div class="popup__container">
-          <button class="popup__close" type="button"></button>
+          <button class="popup__close" type="button" aria-label="Кнопка закрытия попапов"></button>
           <h3 class="popup__title">Редактировать профиль</h3>
-          <form class="popup__form" name="formPopup">
-          <input type="text" value="Жак-Ив Кусто" class="popup__input popup__input_type_name" name="namePopup" placeholder="Введите имя">
-          <input type="text" value="Исследователь океана" class="popup__input popup__input_type_info" name="infoPopup" placeholder="О себе">
+          <form class="popup__form popup__form_type-profile" name="formPopup">
+          <input type="text" value="Жак-Ив Кусто" class="popup__input popup__input_type_name" name="namePopup" required placeholder="Введите имя">
+          <input type="text" value="Исследователь океана" class="popup__input popup__input_type_info" name="infoPopup" required placeholder="О себе">
           <button class="popup__save" type="submit">Сохранить</button>
         </form>
         </div>
@@ -54,11 +57,11 @@
     <!--попап-добавление карточек-->
     <div class="popup popup_type_add-card">
       <div class="popup__container">
-        <button class="popup__close" type="button"></button>
+        <button class="popup__close" type="button" aria-label="Кнопка закрытия попапов"></button>
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form popup__form_type-card" name="formPopup">
-        <input type="text" class="popup__input popup__input_type_named" name="namedPopup" placeholder="Название">
-        <input type="url" class="popup__input popup__input_type_link" name="linkPopup" placeholder="Ссылка на картинку">
+        <input type="text" class="popup__input popup__input_type_title" required name="titlePopup" placeholder="Название">
+        <input type="url" class="popup__input popup__input_type_link" required name="linkPopup" placeholder="Ссылка на картинку">
         <button class="popup__save" type="submit">Создать</button>
       </form>
       </div>
@@ -66,24 +69,22 @@
     <!--попап-открытия картинок-->
     <div class="popup popup_type-img">
       <div class="popup__container-img">
-        <button class="popup__close" type="button"></button>
+        <button class="popup__close" type="button" aria-label="Кнопка закрытия попапов"></button>
         <img class="popup__image" src="#">
           <p class="popup__caption"></p>
       </div>
     </div>
   </div>
     <!--template карточек-->
-    <template class="template">
+    <template id="template">
       <div class="element">
         <img class="element__pictures">
         <div class="element__description">
           <h2 class="element__title"></h2>
-          <button class="element__like" type="button"></button>
+          <button class="element__like" type="button" aria-label="Кнопка лайка карточек"></button>
         </div>
-        <button class="element__delete" type="button"></button>
+        <button class="element__delete" type="button" aria-label="Кнопка удаления карточек"></button>
       </div>
     </template>
-    <!--подключение javascript-->
-    <script src="./scripts/index.js"></script>
   </body>
 </html>
