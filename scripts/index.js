@@ -7,7 +7,7 @@ const infoInput = document.querySelector('[name = "infoPopup"]');
 const nameProfile = document.querySelector('.profile__name');
 const descriptionProfile = document.querySelector('.profile__description');
 
-const cardContainer = document.querySelector('.elements');
+const cardsContainer = document.querySelector('.elements');
 const cardTemplate = document.querySelector('#template');
 const addCardButton = document.querySelector('.profile__button-pic');
 
@@ -30,14 +30,7 @@ function closePopup(popup) {
   popup.classList.remove('popup_is-active');
 }
 
-function renderElement() {
-  const elementsCard = cards.map((item) => {
-    return createElement(item);
-  });
-  cardContainer.append(...elementsCard);
-}
-
-function popupOpenEdit() {
+function openPopupEdit() {
   openPopup(modalWindowProfile);
   nameInput.value = nameProfile.textContent;
   infoInput.value = descriptionProfile.textContent;
@@ -50,26 +43,21 @@ function onProfileSubmit(event) {
   closePopup(modalWindowProfile);
 }
 
-function prependToSection (title, link) {
-  const newElement = createElement({name:title, link:link});
-  cardContainer.prepend(newElement);
-}
-
 function onCardSubmit(event) {
   event.preventDefault();
-  prependToSection(inputName.value, inputLink.value);
+  renderItem(cardsContainer, createElement(inputName.value, inputLink.value));
   closePopup(modalWindowElement);
   event.target.reset();
 }
 
-function createElement(item) {
+function createElement(name, link) {
   const keepingElement = cardTemplate.content.firstElementChild.cloneNode(true);
-  const name = keepingElement.querySelector('.element__title');
+  const title = keepingElement.querySelector('.element__title');
   const img = keepingElement.querySelector('.element__pictures');
   const deleteButton = keepingElement.querySelector('.element__delete');
-  name.textContent = item.name;
-  img.src = item.link;
-  img.alt = item.name
+  title.textContent = name;
+  img.src = link;
+  img.alt = name;
 
   keepingElement.querySelector('.element__like').addEventListener('click', function (evt) {
     evt.target.classList.toggle('element__like_active');
@@ -85,14 +73,24 @@ function createElement(item) {
   img.addEventListener('click', function () {
     popupImg.src = img.src;
     popupImg.alt = img.alt;
-    captionPopup.textContent = name.textContent;
+    captionPopup.textContent = title.textContent;
     openPopup(modalWindowImage);
   });
 
   return keepingElement;
 }
 
-profileEditButton.addEventListener('click', popupOpenEdit);
+//Я долго пытался понять, надеюсь я все сделал правильно:)
+
+function renderItem(cardsContainer, keepingElement) {
+  cardsContainer.append(keepingElement);
+}
+
+cards.forEach(item => {
+  renderItem(cardsContainer, createElement(item.name, item.link))
+});
+
+profileEditButton.addEventListener('click', openPopupEdit);
 
 popupProfileButtonClose.addEventListener('click', () => closePopup(modalWindowProfile));
 
@@ -105,5 +103,3 @@ modalCloseElement.addEventListener('click', () => closePopup(modalWindowElement)
 formPopupCard.addEventListener('submit', onCardSubmit);
 
 modalCloseImage.addEventListener('click', () => closePopup(modalWindowImage));
-
-renderElement();
