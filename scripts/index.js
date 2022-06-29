@@ -24,11 +24,27 @@ const captionPopup = modalWindowImage.querySelector('.popup__caption');
 
 function openPopup(popup) {
   popup.classList.add('popup_is-active');
+  document.addEventListener('keydown', closePopupEscape);
+  popup.addEventListener('mousedown', closePopupOverlay);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_is-active');
+  document.removeEventListener('keydown', closePopupEscape);
+  popup.removeEventListener('mousedown', closePopupOverlay);
 }
+
+function closePopupEscape (event) {
+  if(event.key === 'Escape') {
+    closePopup(document.querySelector('.popup_is-active'));
+  };
+};
+
+function closePopupOverlay(event) {
+  if(event.target.classList.contains('popup')) {
+    closePopup(event.target);
+  };
+};
 
 function openPopupEdit() {
   openPopup(modalWindowProfile);
@@ -80,10 +96,8 @@ function createElement(name, link) {
   return keepingElement;
 }
 
-//Я долго пытался понять, надеюсь я все сделал правильно:)
-
 function renderItem(cardsContainer, keepingElement) {
-  cardsContainer.append(keepingElement);
+  cardsContainer.prepend(keepingElement);
 }
 
 cards.forEach(item => {

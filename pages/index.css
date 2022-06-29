@@ -3,6 +3,7 @@
 @import url('../blocks/page/page.css');
 @import url('../scripts/cards.js');
 @import url('../scripts/index.js');
+@import url('../scripts/validate.js');
 @import url('../blocks/header/header.css');
 @import url('../blocks/header/__logo/header__logo.css');
 @import url('../blocks/profile/profile.css');
@@ -29,10 +30,15 @@
 @import url('../blocks/popup/__caption/popup__caption.css');
 @import url('../blocks/popup/__close/popup__close.css');
 @import url('../blocks/popup/__container/popup__container.css');
+@import url('../blocks/popup/__form/popup__form.css');
 @import url('../blocks/popup/__container-img/popup__container-img.css');
 @import url('../blocks/popup/__image/popup__image.css');
 @import url('../blocks/popup/__input/popup__input.css');
+@import url('../blocks/popup/__input/_type_error/popup__input_type_error.css');
 @import url('../blocks/popup/__save/popup__save.css');
+@import url('../blocks/popup/__save/_disabled/popup__save_disabled.css');
 @import url('../blocks/popup/__title/popup__title.css');
+@import url('../blocks/popup/__error/popup__error.css');
+@import url('../blocks/popup/__error/_visible/popup__error_visible.css');
 @import url('../blocks/popup/_type-img/popup_type-img.css');
 @import url('../blocks/popup/_is-active/popup_is-active.css')
