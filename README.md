@@ -3,4 +3,4 @@
 Выполнен на HTML, CSS и JS.
 При создании затронуто: Grid, Flexbox-вёрстка, Медиазапросы и шрифты.
 Также, структура сайта выполнена по правилам БЭМ.
-Ссылка на GitHub: https://github.com/NekTarinka68/mesto
+Ссылка на сайт: https://github.com/NekTarinka68/mesto
