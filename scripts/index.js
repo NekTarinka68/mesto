@@ -62,9 +62,6 @@ function onProfileSubmit(event) {
 function onCardSubmit(event) {
   event.preventDefault();
   renderItem(cardsContainer, createElement(inputName.value, inputLink.value));
-  const submitButton = event.target.querySelector('.popup__save');
-  const inactiveButtonClass = {inactiveButtonClass: 'popup__save_disabled'};
-  disableButton(submitButton, inactiveButtonClass);
   closePopup(modalWindowElement);
   event.target.reset();
 }

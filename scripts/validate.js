@@ -29,14 +29,6 @@ const checkInputValidity = (formElement, inputElement, config) => {
   }
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> c641e2792aa4c941390df18056a83a37f049c23b
-=======
-
->>>>>>> c641e2792aa4c941390df18056a83a37f049c23b
 const hasInvalidInput = (inputList) => {
   return inputList.some(inputElement => !inputElement.validity.valid)
 };
@@ -44,37 +36,14 @@ const hasInvalidInput = (inputList) => {
 
 const toggleButtonState = (inputList, buttonElement, config) => {
 if (hasInvalidInput(inputList, config)) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-  disableButton(buttonElement, config);
-} else {
-  activeButton(buttonElement, config);
-} 
-}; 
-
-const disableButton = (buttonElement, config) => {
   buttonElement.classList.add(config.inactiveButtonClass);
   buttonElement.disabled = true;
-};
-
-const activeButton = (buttonElement, config) => {
-  buttonElement.classList.remove(config.inactiveButtonClass); 
-  buttonElement.disabled = false;
-};
-
-=======
-=======
->>>>>>> c641e2792aa4c941390df18056a83a37f049c23b
-  buttonElement.classList.add(config.inactiveButtonClass);
 } else {
   buttonElement.classList.remove(config.inactiveButtonClass); 
+  buttonElement.disabled = false;
 } 
 }; 
 
-<<<<<<< HEAD
->>>>>>> c641e2792aa4c941390df18056a83a37f049c23b
-=======
->>>>>>> c641e2792aa4c941390df18056a83a37f049c23b
 const setEventListeners = (formElement, config) => {
   const inputList = Array.from(formElement.querySelectorAll(config.inputSelector)); 
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
@@ -93,19 +62,6 @@ const validation = (config) => {
     formElement.addEventListener('submit', function (evt) {  
       evt.preventDefault();
     });
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> c641e2792aa4c941390df18056a83a37f049c23b
-    //const fieldsetList = Array.from(formElement.querySelectorAll(config.formSelector)); 
-   //fieldsetList.forEach((fieldSet) => {                        
-     //setEventListeners(fieldSet.config);
-    //});
-<<<<<<< HEAD
->>>>>>> c641e2792aa4c941390df18056a83a37f049c23b
-=======
->>>>>>> c641e2792aa4c941390df18056a83a37f049c23b
     setEventListeners(formElement, config);
   });
 };
