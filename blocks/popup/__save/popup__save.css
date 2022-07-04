@@ -1,12 +1,13 @@
 .popup__save {
   text-align: center;
+  display: block;
   background: #000000;
   border-radius: 2px;
   color: white;
   width: 358px;
   height: 50px;
-  margin: 18px 36px 37px 36px;
-  padding: 0;
+  margin: 20px 36px 0px 36px;
+  padding: 0px;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
