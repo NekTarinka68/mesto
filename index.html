@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mesto</title>
+        <!--подключение стилей-->
+        <link rel="stylesheet" href="./pages/index.css" />
+        <!--подключение javascript-->
+        <script defer type="module" src="./scripts/Card.js"></script>
+        <script defer type="module" src="./scripts/index.js"></script>
+        <script defer type="module" src="./scripts/FormValidator.js"></script>
+    </head>
+    <body>
+        <div class="page">
+            <!--шапка сайта-->
+            <header class="header">
+                <img class="header__logo" alt="Логотип" src="images/logo.svg" />
+            </header>
+            <main class="content">
+                <!--профиль-->
+                <section class="profile">
+                    <img class="profile__avatar" alt="Аватарка" src="images/Аватар.svg" />
+                    <div class="profile__info">
+                        <div class="profile__name-button">
+                            <h1 class="profile__name">Жак-Ив Кусто</h1>
+                            <button class="profile__button" type="button" aria-label="Кнопка редактирования профиля">
+                                <img class="profile__button-icon" alt="Иконка редактирования профиля" src="images/button-edit.svg" />
+                            </button>
+                        </div>
+                        <p class="profile__description">Исследователь океана</p>
+                    </div>
+                    <button class="profile__button-pic" type="button" aria-label="Кнопка добавления фотографии">
+                        <img class="profile__button-pictures" alt="Кнопка добавления фотографии" src="images/add-button.svg" />
+                    </button>
+                </section>
+                <!--картинки-->
+                <section class="elements"></section>
+            </main>
+            <!--подвал-->
+            <footer class="footer">
+                <p class="footer__title">© 2022 Nikita Zhdanov</p>
+            </footer>
+            <!--попап-редактирование профиля-->
+            <div class="popup popup_type_edit-profile">
+                <div class="popup__container">
+                    <button class="popup__close" type="button" aria-label="Кнопка закрытия попапов"></button>
+                    <h3 class="popup__title">Редактировать профиль</h3>
+                    <form class="popup__form popup__form_type-profile" name="formPopup" novalidate>
+                        <input type="text" value="Жак-Ив Кусто" class="popup__input popup__input_type_name" name="namePopup" id="namePopup" minlength="2" maxlength="40" required placeholder="Введите имя" />
+                        <span class="popup__error namePopup-error" id="error-namePopup"></span>
+                        <input type="text" value="Исследователь океана" class="popup__input popup__input_type_info" name="infoPopup" id="infoPopup" minlength="2" maxlength="200" required placeholder="О себе" />
+                        <span class="popup__error infoPopup-error" id="error-infoPopup"></span>
+                        <button class="popup__save" type="submit">Сохранить</button>
+                    </form>
+                </div>
+            </div>
+            <!--попап-добавление карточек-->
+            <div class="popup popup_type_add-card">
+                <div class="popup__container">
+                    <button class="popup__close" type="button" aria-label="Кнопка закрытия попапов"></button>
+                    <h3 class="popup__title">Новое место</h3>
+                    <form class="popup__form popup__form_type-card" name="formPopup" novalidate>
+                        <input type="text" class="popup__input popup__input_type_title" required name="titlePopup" id="titlePopup" minlength="2" maxlength="30" placeholder="Название" />
+                        <span class="popup__error titlePopup-error" id="error-titlePopup"></span>
+                        <input type="url" class="popup__input popup__input_type_link" required name="linkPopup" id="linkPopup" placeholder="Ссылка на картинку" />
+                        <span class="popup__error linkPopup-error" id="error-linkPopup"></span>
+                        <button class="popup__save" type="submit">Создать</button>
+                    </form>
+                </div>
+            </div>
+            <!--попап-открытия картинок-->
+            <div class="popup popup_type-img">
+                <div class="popup__container-img">
+                    <button class="popup__close" type="button" aria-label="Кнопка закрытия попапов"></button>
+                    <img class="popup__image" src="#" />
+                    <p class="popup__caption"></p>
+                </div>
+            </div>
+        </div>
+        <!--template карточек-->
+        <template id="template">
+            <div class="element">
+                <img class="element__pictures" />
+                <div class="element__description">
+                    <h2 class="element__title"></h2>
+                    <button class="element__like" type="button" aria-label="Кнопка лайка карточек"></button>
+                </div>
+                <button class="element__delete" type="button" aria-label="Кнопка удаления карточек"></button>
+            </div>
+        </template>
+    </body>
+</html>
