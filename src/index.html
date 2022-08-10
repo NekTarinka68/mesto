@@ -4,34 +4,30 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Mesto</title>
-        <!--подключение стилей-->
-        <link rel="stylesheet" type="text/css" href="./pages/index.css" />
         <!--подключение javascript-->
-        <script defer type="module" src="./scripts/Card.js"></script>
-        <script defer type="module" src="./scripts/index.js"></script>
-        <script defer type="module" src="./scripts/FormValidator.js"></script>
+        <script defer type="module" src="./../dist/build.js"></script>
     </head>
     <body>
         <div class="page">
             <!--шапка сайта-->
             <header class="header">
-                <img class="header__logo" alt="Логотип" src="images/logo.svg" />
+                <img class="header__logo" alt="Логотип" src=<%=require('./images/logo.svg')%> />
             </header>
             <main class="content">
                 <!--профиль-->
                 <section class="profile">
-                    <img class="profile__avatar" alt="Аватарка" src="images/Аватар.svg" />
+                    <img class="profile__avatar" alt="Аватарка" src=<%=require('./images/Аватар.svg')%> />
                     <div class="profile__info">
                         <div class="profile__name-button">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
                             <button class="profile__button" type="button" aria-label="Кнопка редактирования профиля">
-                                <img class="profile__button-icon" alt="Иконка редактирования профиля" src="images/button-edit.svg" />
+                                <img class="profile__button-icon" alt="Иконка редактирования профиля" src=<%=require('./images/button-edit.svg')%> />
                             </button>
                         </div>
                         <p class="profile__description">Исследователь океана</p>
                     </div>
                     <button class="profile__button-pic" type="button" aria-label="Кнопка добавления фотографии">
-                        <img class="profile__button-pictures" alt="Кнопка добавления фотографии" src="images/add-button.svg" />
+                        <img class="profile__button-pictures" alt="Кнопка добавления фотографии" src=<%=require('./images/add-button.svg')%> />
                     </button>
                 </section>
                 <!--картинки-->
