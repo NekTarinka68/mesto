@@ -1,17 +1,16 @@
 export default class Card {
-  constructor(data, templateSelector, openImage){
+  constructor(data, templateSelector, handleCardClick){
     this._data = data;
     this._templateSelector = templateSelector;
-    this._openImage = openImage;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
-    const cardElement = document
-    .querySelector(this._templateSelector)
-    .content
-    .querySelector('.element')
-    .cloneNode(true);
-    return cardElement;
+    return document
+        .querySelector(this._templateSelector)
+        .content
+        .querySelector('.element')
+        .cloneNode(true);
   }
 
   createCard() {
@@ -34,7 +33,7 @@ export default class Card {
       this._deleteCard();
     });
     this._elementImage.addEventListener('click', () => {
-      this._openImage(this._data.link, this._data.name);
+      this._handleCardClick(this._data.link, this._data.name);
     })
   }
 

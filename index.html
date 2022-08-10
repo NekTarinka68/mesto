@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Mesto</title>
         <!--подключение стилей-->
-        <link rel="stylesheet" href="./pages/index.css" />
+        <link rel="stylesheet" type="text/css" href="./pages/index.css" />
         <!--подключение javascript-->
         <script defer type="module" src="./scripts/Card.js"></script>
         <script defer type="module" src="./scripts/index.js"></script>
@@ -61,9 +61,9 @@
                     <button class="popup__close" type="button" aria-label="Кнопка закрытия попапов"></button>
                     <h3 class="popup__title">Новое место</h3>
                     <form class="popup__form popup__form_type-card" name="formPopup" novalidate>
-                        <input type="text" class="popup__input popup__input_type_title" required name="titlePopup" id="titlePopup" minlength="2" maxlength="30" placeholder="Название" />
+                        <input type="text" class="popup__input popup__input_type_title" required name="name" id="titlePopup" minlength="2" maxlength="30" placeholder="Название" />
                         <span class="popup__error titlePopup-error" id="error-titlePopup"></span>
-                        <input type="url" class="popup__input popup__input_type_link" required name="linkPopup" id="linkPopup" placeholder="Ссылка на картинку" />
+                        <input type="url" class="popup__input popup__input_type_link" required name="link" id="linkPopup" placeholder="Ссылка на картинку" />
                         <span class="popup__error linkPopup-error" id="error-linkPopup"></span>
                         <button class="popup__save" type="submit">Создать</button>
                     </form>
