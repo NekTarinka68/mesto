@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   entry: {
-    build: './src/scripts/index.js'
+    build: './src/pages/index.js'
   },
   output: {
     filename: "bundle.js",
@@ -19,6 +19,13 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+        }
+      },
       {
         test: /\.css$/,
         use: [
@@ -38,7 +45,14 @@ module.exports = {
         generator: {
           filename: 'images/[name].[hash][ext]'
         }
-      }
+      },
+      {
+        test: /\.(woff|woff2|ttf|eot|otf)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name].[hash][ext]'
+        }
+      },
     ],
   },
 
