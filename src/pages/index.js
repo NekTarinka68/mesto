@@ -31,7 +31,7 @@ const infoInput = document.querySelector('.popup__input_type_info');
 const formValidatorProfile = new FormValidator(config, formPopupProfile);
 
 const cardsContainer = document.querySelector('.elements');
-const addCardButton = document.querySelector('.profile__button-pic');
+const cardAddButton = document.querySelector('.profile__button-pic');
 const formPopupCard = document.querySelector('.popup__form_type-card');
 const formValidatorCard = new FormValidator(config, formPopupCard);
 
@@ -41,8 +41,8 @@ const captionPopup = modalWindowImage.querySelector('.popup__caption');
 
 //профиль
 const info = new UserInfo({
-  nameuser: '.profile__name',
-  description: '.profile__description'
+  nameUserSelector: '.profile__name',
+  descriptionUserSelector: '.profile__description'
 })
 
 const popupEditProfile = new PopupWithForm({
@@ -54,8 +54,8 @@ popupEditProfile.setEventListeners();
 
 profileEditButton.addEventListener('click', () => {
   const getInputValues = info.getUserInfo();
-  nameInput.value = getInputValues.nameuser;
-  infoInput.value = getInputValues.description;
+  nameInput.value = getInputValues.nameUserSelector;
+  infoInput.value = getInputValues.descriptionUserSelector;
   formValidatorProfile.resetValidation()
   popupEditProfile.open();
 });
@@ -71,7 +71,7 @@ const popupAddCard = new PopupWithForm({
 
 popupAddCard.setEventListeners();
 
-addCardButton.addEventListener('click', () => {
+cardAddButton.addEventListener('click', () => {
   formValidatorCard.resetValidation();
   popupAddCard.open();
 });
@@ -87,7 +87,7 @@ const cardsList = new Section({
     const cardsElement = createElement(item);
     cardsList.addItems(cardsElement);
   }
-}, cardsContainer);
+}, '.elements');
 cardsList.renderItems();
 
 //картинки
