@@ -4,8 +4,6 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Mesto</title>
-        <!--подключение javascript-->
-        <script defer type="module" src="./../dist/build.js"></script>
     </head>
     <body>
         <div class="page">
@@ -16,6 +14,7 @@
             <main class="content">
                 <!--профиль-->
                 <section class="profile">
+                    <button class="profile__button-change-avatar"></button>
                     <img class="profile__avatar" alt="Аватарка" src=<%=require('./images/Аватар.svg')%> />
                     <div class="profile__info">
                         <div class="profile__name-button">
@@ -43,9 +42,9 @@
                     <button class="popup__close" type="button" aria-label="Кнопка закрытия попапов"></button>
                     <h3 class="popup__title">Редактировать профиль</h3>
                     <form class="popup__form popup__form_type-profile" name="formPopup" novalidate>
-                        <input type="text" value="Жак-Ив Кусто" class="popup__input popup__input_type_name" name="nameuser" id="namePopup" minlength="2" maxlength="40" required placeholder="Введите имя" />
+                        <input type="text" value="Жак-Ив Кусто" class="popup__input popup__input_type_name" name="name" id="namePopup" minlength="2" maxlength="40" required placeholder="Введите имя" />
                         <span class="popup__error namePopup-error" id="error-namePopup"></span>
-                        <input type="text" value="Исследователь океана" class="popup__input popup__input_type_info" name="description" id="infoPopup" minlength="2" maxlength="200" required placeholder="О себе" />
+                        <input type="text" value="Исследователь океана" class="popup__input popup__input_type_info" name="about" id="infoPopup" minlength="2" maxlength="200" required placeholder="О себе" />
                         <span class="popup__error infoPopup-error" id="error-infoPopup"></span>
                         <button class="popup__save" type="submit">Сохранить</button>
                     </form>
@@ -73,14 +72,39 @@
                     <p class="popup__caption"></p>
                 </div>
             </div>
+            <!--попап-подтверждения удаления картинок-->
+            <div class="popup popup_type-delete">
+                <div class="popup__container-delete">
+                    <button class="popup__close" type="button" aria-label="Кнопка закрытия попапов"></button>
+                    <h3 class="popup__title">Вы уверены?</h3>
+                    <form class="popup__form" name="card-delete-form">
+                        <button class="popup__save popup__save-del-btn" type="submit">Да</button>
+                    </form>
+                </div>
+            </div>
+            <!--попап-аватарки-->
+        <div class="popup popup-avatar">
+            <div class="popup__container-avatar">
+                <button class="popup__close" type="button" aria-label="Кнопка закрытия попапов"></button>
+                <h3 class="popup__title">Обновить аватар</h3>
+                <form class="popup__form popup__form_type-avatar" name="avatar-change-form">
+                        <input type="url" class="popup__input popup__input_type_avatar" id="avatar-url" name="link" placeholder="Ссылка на аватар" required>
+                        <span class="popup__error avatar-url-error" id="error-avatar"></span>
+                        <button class="popup__save" type="submit">Сохранить</button>
+                </form>
+            </div>
         </div>
+    </div>
         <!--template карточек-->
         <template id="template">
             <div class="element">
                 <img class="element__pictures" />
                 <div class="element__description">
                     <h2 class="element__title"></h2>
+                    <div class="element__like_container">
                     <button class="element__like" type="button" aria-label="Кнопка лайка карточек"></button>
+                    <div class="element__like_numbers"></div>
+                    </div>
                 </div>
                 <button class="element__delete" type="button" aria-label="Кнопка удаления карточек"></button>
             </div>

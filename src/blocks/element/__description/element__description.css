@@ -1,6 +1,8 @@
 .element__description {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  padding: 25px 21px;
+  position: relative;
+  padding: 20px 14px 20px 21px;
   background: #FFFFFF;
 }
