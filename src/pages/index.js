@@ -8,41 +8,28 @@ import UserInfo from "../components/UserInfo.js";
 import PopupWithDeleteCard from "../components/PopupWithDeleteCard.js"; 
 import Api from "../components/Api.js";
 
-const config = { 
-  formSelector: '.popup__form', 
-  inputSelector: '.popup__input', 
-  submitButtonSelector: '.popup__save', 
-  inactiveButtonClass: 'popup__save_disabled', 
-  inputErrorClass: 'popup__input_type_error', 
-  errorClass: 'popup__error_visible', 
-}
+import { 
+  profileEditButton,
+  formPopupProfile,
+  nameInput,
+  infoInput,
+  avatarChangeButton,
+  formElementAvatar,
+  cardAddButton,
+  formPopupCard,
+  modalWindowImage,
+  popupImg,
+  captionPopup
+} from "../utils/constants.js";
 
-const apiConfig = ({
-  host: 'https://nomoreparties.co/v1/cohort-47',
-  headers: {
-    authorization: '1619fec5-c6fd-4772-8d97-05648c9652d9',
-    'Content-Type': 'application/json'
-  },
-});
+import { apiConfig } from "../utils/constants.js";
+import { config } from "../utils/constants.js";
 
 const api = new Api(apiConfig);
 
-const profileEditButton = document.querySelector('.profile__button'); 
-const formPopupProfile = document.querySelector('.popup__form_type-profile'); 
-const nameInput = document.querySelector('.popup__input_type_name'); 
-const infoInput = document.querySelector('.popup__input_type_info'); 
-const avatarChangeButton = document.querySelector('.profile__button-change-avatar');
-const formElementAvatar = document.querySelector('.popup__form_type-avatar');
 const formValidatorProfile = new FormValidator(config, formPopupProfile); 
 const formValidatorAvatar = new FormValidator(config, formElementAvatar); 
-
-const cardAddButton = document.querySelector('.profile__button-pic'); 
-const formPopupCard = document.querySelector('.popup__form_type-card'); 
 const formValidatorCard = new FormValidator(config, formPopupCard); 
-
-const modalWindowImage = document.querySelector('.popup_type-img'); 
-const popupImg = modalWindowImage.querySelector('.popup__image'); 
-const captionPopup = modalWindowImage.querySelector('.popup__caption');
 
 //промиссы
 let userId;
